@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somato Food App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Somato</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">Cart</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <h2>Delicious Food Delivered Fast!</h2>
+</section>
+
+<section class="menu">
+
+    <div class="food">
+        <img src="pizza.jpg" alt="Pizza">
+        <h3>Pizza</h3>
+        <p>Price ₹250</p>
+        <button onclick="addCart('Pizza',250)">
+            Add To Cart
+        </button>
+    </div>
+
+    <div class="food">
+        <img src="burger.jpg" alt="Burger">
+        <h3>Burger</h3>
+        <p>Price ₹150</p>
+        <button onclick="addCart('Burger',150)">
+            Add To Cart
+        </button>
+    </div>
+
+    <div class="food">
+        <img src="pasta.jpg" alt="Pasta">
+        <h3>Pasta</h3>
+        <p>Price ₹220</p>
+        <button onclick="addCart('Pasta',220)">
+            Add To Cart
+        </button>
+    </div>
+
+    <div class="food">
+        <img src="sandw.jpg" alt="Sandwich">
+        <h3>Sandwich</h3>
+        <p>Price ₹120</p>
+        <button onclick="addCart('Sandwich',120)">
+            Add To Cart
+        </button>
+    </div>
+
+</section>
+
+<section class="cart">
+
+    <h2>🛒 Your Cart</h2>
+
+    <ul id="cart"></ul>
+
+    <h3>Total ₹<span id="total">0</span></h3>
+
+    <button onclick="checkout()">
+        Checkout
+    </button>
+
+    <h3 id="result"></h3>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

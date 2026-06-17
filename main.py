@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import jwt
 import datetime
@@ -141,5 +142,5 @@ def get_orders(email: str = Depends(verify_token)):
     return user_orders
 
 
-# Serve static files (HTML, CSS, JS, images)
+# Serve static files (HTML, CSS, JS, images) - this must be LAST
 app.mount("/", StaticFiles(directory=".", html=True), name="static")

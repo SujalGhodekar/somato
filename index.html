@@ -12,56 +12,54 @@
 <body>
 
 <header>
+
     <h1>Somato</h1>
+
+    <input type="text"
+           id="searchBox"
+           placeholder="Search Food..."
+           onkeyup="searchFood()">
 
     <nav>
         <a href="#">Home</a>
-        <a href="#">Menu</a>
-        <a href="#">Cart</a>
+        <a href="#" onclick="scrollToMenu(); return false;">Menu</a>
+        <a href="#">Offers</a>
+        <a href="#">Contact</a>
     </nav>
+
+    <div class="auth-buttons" id="authButtons">
+        <button class="auth-btn" onclick="showLogin()">Login</button>
+        <button class="auth-btn signup-btn" onclick="showSignup()">Sign Up</button>
+    </div>
+
+    <div class="user-info" id="userInfo" style="display:none;">
+        <span id="userName"></span>
+        <button class="auth-btn logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="cartIcon">
+        🛒 <span id="count">0</span>
+    </div>
+
 </header>
 
 <section class="banner">
+
     <h2>Delicious Food Delivered Fast!</h2>
+
+    <p>Fresh • Hot • Affordable</p>
+
+    <button onclick="scrollToMenu()">Order Now</button>
+
 </section>
 
-<section class="menu">
+<section class="offer">
 
-    <div class="food">
-        <img src="pizza.jpg" alt="Pizza">
-        <h3>Pizza</h3>
-        <p>Price ₹250</p>
-        <button onclick="addCart('Pizza',250)">
-            Add To Cart
-        </button>
-    </div>
+    🔥 Flat 50% OFF on First Order
 
-    <div class="food">
-        <img src="burger.jpg" alt="Burger">
-        <h3>Burger</h3>
-        <p>Price ₹150</p>
-        <button onclick="addCart('Burger',150)">
-            Add To Cart
-        </button>
-    </div>
+</section>
 
-    <div class="food">
-        <img src="pasta.jpg" alt="Pasta">
-        <h3>Pasta</h3>
-        <p>Price ₹220</p>
-        <button onclick="addCart('Pasta',220)">
-            Add To Cart
-        </button>
-    </div>
-
-    <div class="food">
-        <img src="sandw.jpg" alt="Sandwich">
-        <h3>Sandwich</h3>
-        <p>Price ₹120</p>
-        <button onclick="addCart('Sandwich',120)">
-            Add To Cart
-        </button>
-    </div>
+<section class="menu" id="menuContainer">
 
 </section>
 
@@ -81,8 +79,47 @@
 
 </section>
 
+<!-- Login/Signup Modal -->
+<div id="authModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeAuth()">&times;</span>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2>Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign Up</a></p>
+            <p id="loginError" class="error-msg"></p>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupForm" style="display:none;">
+            <h2>Sign Up</h2>
+            <input type="text" id="signupName" placeholder="Full Name" required>
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <button onclick="signup()">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+            <p id="signupError" class="error-msg"></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+
+    <h2>Somato Food App</h2>
+
+    <p>Fast Delivery | Fresh Food | Best Price</p>
+
+    <p>📞 9876543210</p>
+
+    <p>📧 somato@gmail.com</p>
+
+</footer>
+
 <script src="script.js"></script>
 
 </body>
-
 </html>

@@ -32,7 +32,7 @@
         <button class="auth-btn signup-btn" onclick="showSignup()">Sign Up</button>
     </div>
 
-    <div class="user-info" id="userInfo" style="display:none;">
+    <div class="user-info hidden" id="userInfo">
         <span id="userName"></span>
         <button class="auth-btn logout-btn" onclick="logout()">Logout</button>
     </div>
@@ -80,7 +80,7 @@
 </section>
 
 <!-- Login/Signup Modal -->
-<div id="authModal" class="modal" style="display:none;">
+<div id="authModal" class="modal hidden">
     <div class="modal-content">
         <span class="close-btn" onclick="closeAuth()">&times;</span>
 
